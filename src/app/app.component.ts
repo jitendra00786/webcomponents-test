@@ -41,8 +41,7 @@ export class AppComponent {
     dots[this.slideIndex-1].className += " active";
 }
 
-width:number =100;
-difference:number =20;
+
 
 hide(){
   
