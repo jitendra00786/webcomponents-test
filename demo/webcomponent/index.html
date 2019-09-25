@@ -115,35 +115,35 @@ $(document).ready(function(){
 <div style="padding: 5%;">
 <div class="container">
   <div class="flowerSlides">
-    <img src=" ./image1.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src=" ./image1.jpg" style="width:100%">
   </div>
 
   <div class="flowerSlides">
-    <img src="./image2.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image2.jpg" style="width:100%">
   </div>
 
   <div class="flowerSlides">
-    <img src="./image3.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image3.jpg" style="width:100%">
   </div>
     
   <div class="flowerSlides">
-    <img src="./image4.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image4.jpg" style="width:100%">
   </div>
 
   <div class="flowerSlides">
-    <img src="./image5.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image5.jpg" style="width:100%">
   </div>
     
   <div class="flowerSlides">
-    <img src="./image6.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image6.jpg" style="width:100%">
   </div>
   
    <div class="flowerSlides">
-    <img src="./image7.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image7.jpg" style="width:100%">
   </div>
   
    <div class="flowerSlides">
-    <img src="./image8.jpg" style="width:100%">
+    <img onmouseover="hide()" onmouseout="unhide()" src="./image8.jpg" style="width:100%">
   </div>
     
 
@@ -152,7 +152,7 @@ $(document).ready(function(){
 
 <br>
 
-  <div class="row" style="margin-left: 5%;margin-right: -5%;" >
+  <div class="row" id="gallery" style="margin-left: 5%;margin-right: -5%;" >
     <div class="column">
       <img class="demo cursor img-height" src="./image1.jpg" style="width:100%" onclick="liveSlide(1)" alt="image1">
     </div>
@@ -210,7 +210,16 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
-  //captionText.innerHTML = dots[slideIndex-1].alt;
+  
+}
+function hide(){
+  
+ document.getElementById("gallery").style.display="none";
+  
+}
+function unhide(){
+  
+  document.getElementById("gallery").style.display="block";
 }
 </script>
 </body>
