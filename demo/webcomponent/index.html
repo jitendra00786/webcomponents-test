@@ -1,0 +1,217 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+
+.container {
+  position: relative;
+}
+
+
+.flowerSlides {
+  display: none;
+}
+
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+.column {
+  float: left;
+  width: 11.01%;
+  /* width: 16.66%; */
+}
+
+
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+.img-height{
+	height:80px; 
+}
+
+
+</style>
+
+</head>
+<script type="text/javascript">
+$(document).ready(function(){
+	 alert('ok');
+	});
+</script>
+<body>
+<div style="background-color: black; padding: 1%;">&nbsp;&nbsp;</div><br>
+<div style="padding: 5%;">
+<div class="container">
+  <div class="flowerSlides">
+    <img src=" ./image1.jpg" style="width:100%">
+  </div>
+
+  <div class="flowerSlides">
+    <img src="./image2.jpg" style="width:100%">
+  </div>
+
+  <div class="flowerSlides">
+    <img src="./image3.jpg" style="width:100%">
+  </div>
+    
+  <div class="flowerSlides">
+    <img src="./image4.jpg" style="width:100%">
+  </div>
+
+  <div class="flowerSlides">
+    <img src="./image5.jpg" style="width:100%">
+  </div>
+    
+  <div class="flowerSlides">
+    <img src="./image6.jpg" style="width:100%">
+  </div>
+  
+   <div class="flowerSlides">
+    <img src="./image7.jpg" style="width:100%">
+  </div>
+  
+   <div class="flowerSlides">
+    <img src="./image8.jpg" style="width:100%">
+  </div>
+    
+
+</div>
+
+
+<br>
+
+  <div class="row" style="margin-left: 5%;margin-right: -5%;" >
+    <div class="column">
+      <img class="demo cursor img-height" src="./image1.jpg" style="width:100%" onclick="liveSlide(1)" alt="image1">
+    </div>
+    <div class="column">
+      <img class="demo cursor img-height" src="./image2.jpg" style="width:100%" onclick="liveSlide(2)" alt="image2">
+    </div>
+    <div class="column">
+      <img class="demo cursor img-height" src="./image3.jpg" style="width:100%" onclick="liveSlide(3)" alt="image3">
+    </div>
+    <div class="column">
+      <img class="demo cursor img-height" src="./image4.jpg" style="width:100%" onclick="liveSlide(4)" alt="image4">
+    </div>
+    <div class="column">
+      <img class="demo cursor img-height" src="./image5.jpg" style="width:100%" onclick="liveSlide(5)" alt="image5">
+    </div>    
+    <div class="column">
+      <img class="demo cursor img-height" src="./image6.jpg" style="width:100%" onclick="liveSlide(6)" alt="image6">
+    </div>
+     <div class="column">
+      <img class="demo cursor img-height" src="./image7.jpg" style="width:100%" onclick="liveSlide(7)" alt="image7">
+    </div>
+     <div class="column">
+      <img class="demo cursor img-height" src="./image8.jpg" style="width:100%" onclick="liveSlide(8)" alt="image8">
+    </div>
+ </div>
+
+</div>
+<br>
+<div style="background-color: black; padding: 1%;" >&nbsp;&nbsp;</div>
+
+<script>
+var slideIndex = 4;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function liveSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("flowerSlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  //captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+</body>
+</html>
